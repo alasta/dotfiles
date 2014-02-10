@@ -1,0 +1,46 @@
+startup_message off
+deflogin on
+autodetach on
+vbell off
+vbell_msg " !!! "
+hardstatus off
+defscrollback 44000
+nethack on
+
+#Combinaison d echappement a la place de Ctrl + a car utilise en bash
+escape ^zz
+caption     always        "%{+b rk}%H%{gk}|%c@%{yk}%d.%m.%Y|%72=Load: %l %{wk}"
+hardstatus alwayslastline "%{= g} %{= w}%-Lw%{=r}%n%f* %t%{-}%+LW"
+termcapinfo xterm ti@:te@
+
+#Racourcis
+# ne fonctionne pas toujours avec -k k1 (F1)
+bindkey "^[[11~" select 1 #bind F1 a tab 1
+bindkey "^[[12~" select 2 #bind F2 a tab 2
+bindkey "^[[13~" select 3 #bind F3 a tab 3
+bindkey "^[[14~" select 4 #bind F4 a tab 4
+
+bindkey "^[[15~" title #Renommer le tab/window
+bindkey -k k6 split #Split le tab en cours
+bindkey -k k7 focus #Switch sur le tab suivant dans le split
+bindkey -k k8 remove #Detruit le split en cours
+
+bindkey -k k9 screen #binf F9 a creation de tab = Ctrl + a + c
+bindkey -k k; windowlist -b #bind F10 pour lister les tabs disponibles
+bindkey -k F1 kill  # bind f11 pour killer le tab en cours
+bindkey -k F2 quit  # bind f12 pour killer l instance screen
+
+bindkey -k kP prev #PageUp : tab precedent
+bindkey -k kN next #PageDown : tab suivant
+
+#Creation de tab au lancelent
+#Bash
+screen -t bash
+#path fabric
+chdir "$HOME/fabric"
+screen -t fabric 1
+#set le cwd
+chdir $HOME
+
+#On fait le focus sur le tab 0
+select 0
