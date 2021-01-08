@@ -1,0 +1,19 @@
+#Personnalisation de la completion comme zsh (avec bash_completion installe)
+set completion-ignore-case on
+set show-all-if-ambiguous on
+set page-completions on
+set show-all-if-unmodified on
+set bell-style none
+set colored-stats On
+set visible-stats On
+set mark-symlinked-directories On
+set skip-completed-text On
+set disable-completion Off
+set menu-complete-display-prefix on
+set colored-completion-prefix on
+"TAB": complete
+"\C-j": menu-complete-backward
+#Shift-Tab
+"\e[Z": menu-complete
+#shortcut Ctrl + e qui ajoute | less à la commande en cours
+#"\C-e": " | less"
