@@ -6,3 +6,7 @@ Repository pour des fichiers de configurations d'applications de tous les jours 
 - .vimrc
 - .tmux.conf
 - ...
+
+
+### To download all files 
+curl https://github.com/alasta/dotfiles/archive/master.tar.gz
