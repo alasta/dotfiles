@@ -1,9 +1,9 @@
 # .bash_profile
 
 # Get the aliases and functions
-#if [ -f ~/.bashrc ]; then
-#       . ~/.bashrc
-#fi
+if [ -f ~/.bashrc ]; then
+       . ~/.bashrc
+fi
 
 # User specific environment and startup programs
 
@@ -21,10 +21,7 @@ else
         PS1='[\[$(tput bold)\]\[$(tput setaf 6)\]\A \[$(tput setaf 4)\]\u\[$(tput setaf 3)\]@\[$(tput setaf 7)\]\h ] \[$(tput setaf 2)\]\w \[$(tput setaf 3)\]\$ \[$(tput setaf 7)\]\[$(tput sgr0)\]'
 fi
 
-
-
 #export PATH PS1
-
 alias vi="vim"
 alias ll='ls -alh --time-style=+"%Y-%m-%d %H:%M:%S"'
 
@@ -44,29 +41,14 @@ function sedenied () {
                 grep deni /var/log/audit/audit.log.$1 | awk -F'[(:]' '{$2=strftime("(%Y/%m/%d-%Hh%Mm%Ss:",$2); print $0}'
         fi
 }
-alias lock="vlock -c"
+
+#alias lock="vlock -c"
 alias tmux="tmux -2"
 export PATH=$PATH:~/.local/bin:/usr/local/bin/
 export PAGER=most
 export EDITOR=vim
 
-if [ -f  ~/.local/bin/powerline-daemon ]; then
-        ~/.local/bin/powerline-daemon -q
-        POWERLINE_BASH_CONTINUATION=1
-        POWERLINE_BASH_SELECT=1
-        . ~/.local/lib/python2.6/site-packages/powerline/bindings/bash/powerline.sh
-fi
-
-
-# .bashrc
-
-# Source global definitions
-#if [ -f /etc/bashrc ]; then
-#       . /etc/bashrc
-#fi
-
 # User specific aliases and functions
-
 ssh() {
     if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
         #tmux rename-window "$(echo $* | cut -d . -f 1)"
@@ -79,7 +61,5 @@ ssh() {
         command ssh "$@"
     fi
 }
-
-
 
 export TERM="screen-256color"
