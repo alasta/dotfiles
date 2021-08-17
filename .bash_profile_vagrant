@@ -26,3 +26,21 @@ function sedenied () {
                 grep deni /var/log/audit/audit.log.$1 | awk -F'[(:]' '{$2=strftime("(%Y/%m/%d-%Hh%Mm%Ss:",$2); print $0}'
         fi
 }
+
+#Gestion du $SPLUNK_HOME
+#https://docs.splunk.com/Documentation/CoE/ssf/Handbook/UnixProfile
+for SPLUNK_HOME in "/Applications/Splunk" "/Applications/SplunkForwarder" "/opt/splunk" "/opt/splunkforwarder" "/Applications/SplunkBeta" "/Applications/SplunkForwarderBeta" "${HOME}/splunkforwarder";
+do
+        if [ -d ${SPLUNK_HOME} ]; then
+                break
+        fi
+done
+
+if [ "${SPLUNK_HOME}" == "" ];then
+        echo "WARNING: SPLUNK_HOME env variable undefined"
+fi
+export SPLUNK_HOME
+
+#definition du PATH pour le bin splunk
+export PATH=$PATH:${SPLUNK_HOME}/bin/
+
