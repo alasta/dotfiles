@@ -33,6 +33,15 @@ set list lcs=tab:\|\
 
 :set mouse=a
 
+set cursorcolumn
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
           
 " VimPlug 
 call plug#begin('~/.vim/plugged')
