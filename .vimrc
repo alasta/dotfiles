@@ -60,27 +60,14 @@ Plug 'ervandew/supertab'
 """" lightline
 Plug 'itchyny/lightline.vim'
 
-
 Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'yorokobi/vim-splunk'
-
-" Syntastic  
-" https://github.com/scrooloose/syntastic
-"Plug 'scrooloose/syntastic'
-
-" Surround
-" surround.vim: quoting/parenthesizing made simple
-" https://github.com/tpope/vim-surround
-"Plug 'tpope/vim-surround'
-"Plug 'Yggdroot/indentLine'
-"let g:indentLine_char = '|'
 
 
 call plug#end()
 " Required:
 filetype plugin indent on
-
 
 
 """""'lifepillar/vim-solarized8'
@@ -109,15 +96,10 @@ set laststatus=2
 "      \ 'colorscheme': 'wombat',
 "      \ }  
 
-
-
-
 :set cursorline
 :hi CursorLine   cterm=NONE ctermbg=31 ctermfg=white guibg=darkred guifg=white
 ":hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred
 "guifg=white
-
-
 
 """""RainbowParentheses
 let g:rainbow_active = 1
