@@ -34,6 +34,7 @@ set list lcs=tab:\|\
 :set mouse=a
 
 set cursorcolumn
+highlight LineNr ctermfg=grey
 
 " Enable folding
 set foldmethod=indent
