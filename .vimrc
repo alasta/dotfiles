@@ -33,17 +33,7 @@ set list lcs=tab:\|\
 
 :set mouse=a
 
-set cursorcolumn
-highlight LineNr ctermfg=grey
-
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-" Enable folding with the spacebar
-nnoremap <space> za
-
-          
+if isdirectory(expand("~/.vim/plugged/"))          
 " VimPlug 
 call plug#begin('~/.vim/plugged')
 
@@ -61,14 +51,27 @@ Plug 'ervandew/supertab'
 """" lightline
 Plug 'itchyny/lightline.vim'
 
+
 Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'yorokobi/vim-splunk'
+
+" Syntastic  
+" https://github.com/scrooloose/syntastic
+"Plug 'scrooloose/syntastic'
+
+" Surround
+" surround.vim: quoting/parenthesizing made simple
+" https://github.com/tpope/vim-surround
+"Plug 'tpope/vim-surround'
+"Plug 'Yggdroot/indentLine'
+"let g:indentLine_char = '|'
 
 
 call plug#end()
 " Required:
 filetype plugin indent on
+
 
 
 """""'lifepillar/vim-solarized8'
@@ -97,10 +100,15 @@ set laststatus=2
 "      \ 'colorscheme': 'wombat',
 "      \ }  
 
+
+
+
 :set cursorline
 :hi CursorLine   cterm=NONE ctermbg=31 ctermfg=white guibg=darkred guifg=white
 ":hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred
 "guifg=white
+
+
 
 """""RainbowParentheses
 let g:rainbow_active = 1
@@ -140,3 +148,14 @@ let s:palette.tabline.left = [ [ '#3a95b8', '#5f87ee',  255, 31 ] ]
 let s:palette.tabline.middle = [ [ '#3a95b8', '#5f87ee', 255 , 74 ] ]
 "let s:palette.tabline.right = [ [ '#3a95b8', '#5f87ee', 255 , 74 ] ]
 unlet s:palette
+
+
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+
+highlight CursorLineNr ctermfg=red
+endif
