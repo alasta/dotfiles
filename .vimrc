@@ -49,7 +49,8 @@ set list lcs=tab:\|\
 
 "Check si le dossier de plugins est existant ce qui veut dire que les plugins
 "sont present
-if isdirectory(expand("~/.vim/plugged/"))          
+if isdirectory(expand("~/.vim/plugged/"))  
+    "Gestion de chargement des plugins
     " VimPlug 
     call plug#begin('~/.vim/plugged')
 
@@ -91,6 +92,7 @@ if isdirectory(expand("~/.vim/plugged/"))
 
 
     """""'lifepillar/vim-solarized8'
+    "gestion du theme par plugin
     set background=dark
     colorscheme solarized8_flat
     """error : E185: Cannot find color scheme 'solarized'
@@ -98,6 +100,7 @@ if isdirectory(expand("~/.vim/plugged/"))
 
 
     """"""vim_current_word 
+    "Gestion de la couleurs des mots via plugin
     "" lien couleurs : https://jonasjacek.github.io/colors/
     " Twins of word under cursor:
     let g:vim_current_word#highlight_twins = 1
@@ -108,15 +111,6 @@ if isdirectory(expand("~/.vim/plugged/"))
     hi CurrentWord ctermbg=63
     """couleur de l occurence du mot dans le fichier
     hi CurrentWordTwins ctermbg=239
-
-
-    """""lightline
-    set laststatus=2
-    "let g:lightline = {
-    "      \ 'colorscheme': 'wombat',
-    "      \ }  
-
-
 
 
     :set cursorline
@@ -139,7 +133,10 @@ if isdirectory(expand("~/.vim/plugged/"))
     au Syntax * RainbowParenthesesLoadBraces
 
 
+    "Affichage de la barre d onglet
     set showtabline=2
+
+    "Gestion/theme de la barre insert/visual/ ....
     let g:lightline = {
       \ 'component_function': {
       \   'filename': 'LightlineFilename',
@@ -152,7 +149,7 @@ if isdirectory(expand("~/.vim/plugged/"))
     let g:lightline.subseparator = { 'left': "\ue0b1", 'right': "\ue0b3" }
     let g:netrw_browse_split = 3
 
-
+    "couleurs pour les tab/onglet
     let s:palette = g:lightline#colorscheme#powerline#palette
     "tab actif
     "let s:palette.tabline.tabsel = [ [ '#3a95b8', '#5f87ee', 255, 196, 'bold' ] ]
@@ -164,14 +161,14 @@ if isdirectory(expand("~/.vim/plugged/"))
     let s:palette.tabline.middle = [ [ '#3a95b8', '#5f87ee', 255 , 74 ] ]
     "let s:palette.tabline.right = [ [ '#3a95b8', '#5f87ee', 255 , 74 ] ]
     unlet s:palette
-
-
-    set foldmethod=indent
-    set foldlevel=99
-
-    " Enable folding with the spacebar
-    nnoremap <space> za
-
-
-    highlight CursorLineNr ctermfg=red
 endif
+
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+
+highlight CursorLineNr ctermfg=red
+
