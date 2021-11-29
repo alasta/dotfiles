@@ -44,6 +44,12 @@ set list lcs=tab:\|\
 """hybride numero de ligne
 :set number rnu
 
+"affichage de la colonne curseur
+set cursorcolumn
+
+"changement de couleur du numero de ligne
+highlight CursorLineNr ctermfg=red
+
 "Gestion de la souris
 :set mouse=a
 
@@ -163,12 +169,12 @@ if isdirectory(expand("~/.vim/plugged/"))
     unlet s:palette
 endif
 
+"Gestion du colapse sur des sections base sur l indetation
 set foldmethod=indent
-set foldlevel=99
-
+set foldlevel=4
 " Enable folding with the spacebar
 nnoremap <space> za
 
 
-highlight CursorLineNr ctermfg=red
+
 
