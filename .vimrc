@@ -176,5 +176,5 @@ set foldlevel=4
 nnoremap <space> za
 
 
-"""Gestion copier avec "y" hors mode insertion
+"""Gestion copier avec "y" hors mode insertion/du moins sous MacOS
 set clipboard=unnamed
