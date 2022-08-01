@@ -24,7 +24,7 @@ fi
 #export PATH PS1
 alias vi="vim"
 alias ll='ls -alh --time-style=+"%Y-%m-%d %H:%M:%S"'
-
+alias tmux='tmux -2'
 
 
 # enable bash completion in interactive shells
